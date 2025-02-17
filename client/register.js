@@ -27,5 +27,5 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
 // Event listener for the home button
 document.getElementById('goHome').addEventListener('click', function() {
-    window.location.href = "index.html"; // Redirect to home page
+    window.location.href = "/"; // Redirect to home page
 });
