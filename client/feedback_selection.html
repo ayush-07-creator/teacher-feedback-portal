@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Feedback Type</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 900px;
+        }
+
+        /* Left Section - Image */
+        .image-section {
+            flex: 1;
+            text-align: center;
+            padding-right: 30px;
+        }
+
+        .image-section img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+        }
+
+        /* Right Section - Feedback Selection */
+        .selection-container {
+            flex: 1;
+            text-align: center;
+        }
+
+        .selection-container h1 {
+            color: #6a11cb;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-type {
+            margin: 15px;
+            padding: 25px;
+            border: 2px solid #6a11cb;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .feedback-type:hover {
+            background-color: #f0e6ff;
+            transform: scale(1.05);
+        }
+
+        #logoutButton {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #ff4d4d;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #logoutButton:hover {
+            background: #cc0000;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
+            }
+            .image-section {
+                padding-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Left Section (Image) -->
+    <div class="image-section">
+        <img src="feedback.png" alt="Feedback Illustration">
+    </div>
+
+    <!-- Right Section (Feedback Selection) -->
+    <div class="selection-container">
+        <h1>Select Feedback Type</h1>
+        <div class="feedback-type" onclick="location.href='teacher_feedback.html'">
+            <h2>Teacher Feedback</h2>
+            <p>Provide feedback about your teachers</p>
+        </div>
+        <div class="feedback-type" onclick="location.href='student_feedback.html'">
+            <h2>Student Feedback</h2>
+            <p>Provide feedback about students</p>
+        </div>
+    </div>
+</div>
+
+<button id="logoutButton">Logout</button>
+
+<script>
+    document.getElementById('logoutButton').addEventListener('click', function() {
+        localStorage.removeItem('loggedIn');
+        window.location.href = "/";
+    });
+</script>
+
+</body>
+</html>
