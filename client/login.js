@@ -18,7 +18,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             // Set logged in status
             localStorage.setItem('loggedIn', 'true');
             // Redirect to feedback form
-            window.location.href = "feedback.html"; // Redirect to the feedback form
+            window.location.href = "feedback_selection.html"; // Redirect to the feedback form
         } else {
             // Check if the user is not registered
             if (data.message === 'Invalid username or password') {
